@@ -1,4 +1,3 @@
-/*the Command for turning on the light*/
 
 public class LightOnCmd implements Command{
    private AllLights light;
@@ -7,7 +6,6 @@ public class LightOnCmd implements Command{
    {
       this.light=light;
    }
-
    public void execute()
    {
 	   light.turnOn();

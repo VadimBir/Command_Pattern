@@ -7,7 +7,6 @@ public class StereoSysVolUpCmd implements Command {
 	{
 		this.StereoSys=StereoSys;
 	}
-	
 	public void execute() 
 	{
 		StereoSys.VolumeUp();

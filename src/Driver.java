@@ -47,6 +47,7 @@ public class Driver{
         ACCtrlArr.CmdArr(2);
         ACCtrlArr.CmdArr(3);
         ACCtrlArr.CmdArr(1);
+        ACCtrlArr.CmdArr(0);
 
         System.out.println("\n");
 

@@ -1,11 +1,12 @@
 public class ControlPanel {
+    /*
     private Command Cmd1;
     private Command Cmd2;
     private Command Cmd3;
     private Command Cmd4;
-
+    */
     private Command Cmd[];
-
+    /*
     public ControlPanel(Command Cmd1,Command Cmd2)
     {
          this.Cmd1=Cmd1;
@@ -18,6 +19,7 @@ public class ControlPanel {
         this.Cmd3=Cmd3;
         this.Cmd4=Cmd4;
     }
+    */
     public ControlPanel(Command arr[])
     {
         Cmd = new Command[arr.length];
@@ -25,6 +27,7 @@ public class ControlPanel {
             this.Cmd[i]=arr[i];
         }
     }
+    /*
     public void OnCmd()
     {
     	Cmd1.execute();
@@ -41,7 +44,7 @@ public class ControlPanel {
     {
     	Cmd4.execute();
     }
-    //public void 
+    */
     public void CmdArr(int i)
     {
         Cmd[i].execute();

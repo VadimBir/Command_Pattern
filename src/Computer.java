@@ -14,6 +14,6 @@ public class Computer {
 	}
 	public void Sleep()
 	{
-		System.out.println("Sending a Sleep Signal...");
+		System.out.println("Sending a Sleep Signal..."); 
 	}
 }

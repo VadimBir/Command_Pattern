@@ -7,7 +7,6 @@ public class StereoSysVolDownCmd implements Command {
 	{
 		this.StereoSys=StereoSys;
 	}
-	
 	public void execute() 
 	{
 		StereoSys.VolumeDown();

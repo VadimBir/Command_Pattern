@@ -1,7 +1,6 @@
 
 public class StereoSysOnCmd implements Command {
 	
-	
 	private StereoSystem StereoSys;
 	
 	public StereoSysOnCmd(StereoSystem StereoSys)
