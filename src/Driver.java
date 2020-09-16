@@ -60,6 +60,8 @@ public class Driver{
         ACCtrlArr.CmdArr(CmdMap.get("On"));
         ACCtrlArr.CmdArr(CmdMap.get("TempUp"));
         ACCtrlArr.CmdArr(CmdMap.get("TempUp"));
+        ACCtrlArr.CmdArr(CmdMap.get("TempUp"));
+        ACCtrlArr.CmdArr(CmdMap.get("TempUp"));
         ACCtrlArr.CmdArr(CmdMap.get("TempDown"));
         ACCtrlArr.CmdArr(CmdMap.get("Off"));
         ACCtrlArr.CmdArr(CmdMap.get("On")); // This line is here on purpose 
@@ -68,8 +70,6 @@ public class Driver{
         
         StereoSysCtrlArr.CmdArr(CmdMap.get("On"));
         StereoSysCtrlArr.CmdArr(CmdMap.get("VolUp"));
-        StereoSysCtrlArr.CmdArr(CmdMap.get("VolUp"));
-        StereoSysCtrlArr.CmdArr(CmdMap.get("VolDown"));
         StereoSysCtrlArr.CmdArr(CmdMap.get("Off"));
         
         System.out.println("\n");
