@@ -1,7 +1,7 @@
 
 public class AirConditioner {
 
-	double temperature = 21; 
+	private double temperature = 21; 
 	
    public void On()
    {

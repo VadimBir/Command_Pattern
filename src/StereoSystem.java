@@ -1,8 +1,8 @@
 
 public class StereoSystem {
 	
-
-	int volume = 50;
+	private int volume = 50;
+	
 	public void On()
 	{
         System.out.println("Playing Music...");

@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 public class Driver{
     public static void main(String[] args){
 
@@ -5,12 +7,14 @@ public class Driver{
         Computer desktopPC = new Computer();
         AirConditioner AC = new AirConditioner();
         StereoSystem stereoSys = new StereoSystem();
+
+        HashMap<String, Integer> CmdMap = new HashMap<String, Integer>(); 
         
         Command[] CmdArrLight;
         CmdArrLight =  new Command[4];
         CmdArrLight[0]= new LightOnCmd(Lights);
         CmdArrLight[1]= new LightOffCmd(Lights);
-
+        
         Command[] CmdArrAC;
         CmdArrAC =  new Command[4];
         CmdArrAC[0]= new ACOnCmd(AC);
@@ -24,7 +28,7 @@ public class Driver{
         CmdArrStereoSys[1]= new StereoSysOffCmd(stereoSys);
         CmdArrStereoSys[2]= new StereoSysVolUpCmd(stereoSys);
         CmdArrStereoSys[3]= new StereoSysVolDownCmd(stereoSys);
-    
+        
         Command[] CmdArrPC;
         CmdArrPC =  new Command[4];
         CmdArrPC[0]= new PCRebootCmd(desktopPC);
@@ -36,32 +40,43 @@ public class Driver{
         ControlPanel ACCtrlArr= new ControlPanel(CmdArrAC);
         ControlPanel StereoSysCtrlArr= new ControlPanel(CmdArrStereoSys);
         ControlPanel PCCtrlArr= new ControlPanel(CmdArrPC);
+        
+        CmdMap.put("On", 0);
+        CmdMap.put("Off", 1);
+        CmdMap.put("VolUp", 2);
+        CmdMap.put("VolDown", 3);
+        CmdMap.put("TempUp", 2);
+        CmdMap.put("TempDown", 3);
+        CmdMap.put("Shutdown", 1);
+        CmdMap.put("WakeOnLan", 3);
+        CmdMap.put("Sleep", 2);
+        CmdMap.put("Reboot", 0);
 
-        LightCtrlArr.CmdArr(0);
-        LightCtrlArr.CmdArr(1);
-
+        LightCtrlArr.CmdArr(CmdMap.get("On"));
+        LightCtrlArr.CmdArr(CmdMap.get("Off"));
+        
         System.out.println("\n");
         
-        ACCtrlArr.CmdArr(0);
-        ACCtrlArr.CmdArr(2);
-        ACCtrlArr.CmdArr(2);
-        ACCtrlArr.CmdArr(3);
-        ACCtrlArr.CmdArr(1);
-        ACCtrlArr.CmdArr(0);
-
-        System.out.println("\n");
-
-        StereoSysCtrlArr.CmdArr(0);
-        StereoSysCtrlArr.CmdArr(2);
-        StereoSysCtrlArr.CmdArr(2);
-        StereoSysCtrlArr.CmdArr(3);
-        StereoSysCtrlArr.CmdArr(1);
-
+        ACCtrlArr.CmdArr(CmdMap.get("On"));
+        ACCtrlArr.CmdArr(CmdMap.get("TempUp"));
+        ACCtrlArr.CmdArr(CmdMap.get("TempUp"));
+        ACCtrlArr.CmdArr(CmdMap.get("TempDown"));
+        ACCtrlArr.CmdArr(CmdMap.get("Off"));
+        ACCtrlArr.CmdArr(CmdMap.get("On")); // This line is here on purpose 
+        
         System.out.println("\n");
         
-        PCCtrlArr.CmdArr(3);
-        PCCtrlArr.CmdArr(0);
-        PCCtrlArr.CmdArr(2);
-        PCCtrlArr.CmdArr(1);
-   }
+        StereoSysCtrlArr.CmdArr(CmdMap.get("On"));
+        StereoSysCtrlArr.CmdArr(CmdMap.get("VolUp"));
+        StereoSysCtrlArr.CmdArr(CmdMap.get("VolUp"));
+        StereoSysCtrlArr.CmdArr(CmdMap.get("VolDown"));
+        StereoSysCtrlArr.CmdArr(CmdMap.get("Off"));
+        
+        System.out.println("\n");
+        
+        PCCtrlArr.CmdArr(CmdMap.get("WakeOnLan"));
+        PCCtrlArr.CmdArr(CmdMap.get("Reboot"));
+        PCCtrlArr.CmdArr(CmdMap.get("Sleep"));
+        PCCtrlArr.CmdArr(CmdMap.get("Shutdown"));
+    }
 }
