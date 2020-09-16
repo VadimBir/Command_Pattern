@@ -20,24 +20,34 @@ public class Driver{
        Command stereoSysOff = new StereoSysOffCmd(stereoSys);
        Command stereoSysUp= new StereoSysVolUpCmd(stereoSys);
        Command stereoSysDown= new StereoSysVolDownCmd(stereoSys);
+       
+       Command[] CmdArrStereoSys;
+       CmdArrStereoSys =  new Command[4];
+       
+       CmdArrStereoSys[0]= new StereoSysOnCmd(stereoSys);
+       CmdArrStereoSys[1]= new StereoSysOffCmd(stereoSys);
+       CmdArrStereoSys[2]= new StereoSysVolUpCmd(stereoSys);
+       CmdArrStereoSys[3]= new StereoSysVolDownCmd(stereoSys);
 
        Command RebootPC = new PCRebootCmd(desktopPC);
        Command ShutdownPC = new PCShutdownCmd(desktopPC);
        Command SleepPC = new PCSleepCmd(desktopPC);
        Command WakeOnLanPC = new PCWakeOnLanCmd(desktopPC); 
        
-       Command[] arr;
-       arr =  new Command[3];
+       Command[] CmdArrPC;
+       CmdArrPC =  new Command[4];
        
-       arr[0]= RebootPC;
-       arr[1]= ShutdownPC;
-       arr[2]= SleepPC;
+       CmdArrPC[0]= new PCRebootCmd(desktopPC);
+       CmdArrPC[1]= new PCShutdownCmd(desktopPC);
+       CmdArrPC[2]= new PCSleepCmd(desktopPC);
+       CmdArrPC[3]= new PCWakeOnLanCmd(desktopPC);
        
        ControlPanel LightCtrl=new ControlPanel(lTurnOn,lTurnOff);
        ControlPanel ACCtrl= new ControlPanel(ACon, ACoff,ACup, ACdown );
        ControlPanel StereoSysCtrl= new ControlPanel(stereoSysOn, stereoSysOff, stereoSysUp, stereoSysDown);
+       ControlPanel StereoSysCtrlArr= new ControlPanel(CmdArrStereoSys);
        ControlPanel PCCtrl = new ControlPanel(WakeOnLanPC,ShutdownPC, RebootPC, SleepPC  );
-       ControlPanel TestArr= new ControlPanel(arr);
+       ControlPanel PCCtrlArr= new ControlPanel(CmdArrPC);
 
        LightCtrl.OnCmd();
        LightCtrl.OffCmd();
@@ -47,12 +57,29 @@ public class Driver{
        ACCtrl.Cmd3();
        ACCtrl.Cmd4();
        ACCtrl.OffCmd();
+
+       /*
        System.out.println("\n");
        StereoSysCtrl.OnCmd();
        StereoSysCtrl.Cmd3();
        StereoSysCtrl.Cmd3();
        StereoSysCtrl.Cmd4();
        StereoSysCtrl.OffCmd();
+        */
+       System.out.println("\n");
+
+
+       StereoSysCtrlArr.CmdArr(0);
+       StereoSysCtrlArr.CmdArr(2);
+       StereoSysCtrlArr.CmdArr(2);
+       StereoSysCtrlArr.CmdArr(3);
+       StereoSysCtrlArr.CmdArr(1);
+
+
+        System.out.println("\n");
+       System.out.println("\n");
+
+
        System.out.println("\n");
        PCCtrl.OnCmd();
        PCCtrl.Cmd3();
@@ -60,7 +87,13 @@ public class Driver{
        PCCtrl.OffCmd();
        
        System.out.println("\n");
-       //System.out.println("\n");
+       System.out.println("\n");
+       
+       PCCtrlArr.CmdArr(3);
+       PCCtrlArr.CmdArr(0);
+       PCCtrlArr.CmdArr(2);
+       PCCtrlArr.CmdArr(1);
+       
        
 
 

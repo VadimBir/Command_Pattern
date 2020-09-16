@@ -42,8 +42,8 @@ public class ControlPanel {
     	Cmd4.execute();
     }
     //public void 
-    public void CmdArr()
+    public void CmdArr(int i)
     {
-        
+        Cmd[i].execute();
     }
 }
